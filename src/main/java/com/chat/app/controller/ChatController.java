@@ -10,7 +10,7 @@ import com.chat.app.model.ChatMessage;
 @RestController
 public class ChatController {
     
-    @MessageMapping("/sendMessage")
+    @MessageMapping("app/sendMessage")
     @SendTo("/topic/messages")
     public ChatMessage sendMessage(ChatMessage message) {
         return message;
