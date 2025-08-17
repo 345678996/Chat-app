@@ -6,16 +6,7 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 @Document(collection = "rooms")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Room {
     @Id
     private Long id;
@@ -23,6 +14,42 @@ public class Room {
 
     private List<Message> messages = new ArrayList<>();
 
+    // No-args constructor
+    public Room() {
+    }
 
+    // All-args constructor
+    public Room(Long id, Long roomId, List<Message> messages) {
+        this.id = id;
+        this.roomId = roomId;
+        this.messages = messages;
+    }
+
+    // Getter and Setter for id
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    // Getter and Setter for roomId
+    public Long getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(Long roomId) {
+        this.roomId = roomId;
+    }
+
+    // Getter and Setter for messages
+    public List<Message> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
+    }
 
 }
