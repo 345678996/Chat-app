@@ -2,9 +2,6 @@ package com.chat.app.model;
 
 import java.time.LocalDateTime;
 
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document(collection = "message")
 public class Message {
 
     private String sender;

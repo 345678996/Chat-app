@@ -9,8 +9,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "rooms")
 public class Room {
     @Id
-    private Long id;
-    private Long roomId;
+    private String id;   // MongoDB _id (auto-generated as a String)
+    private Long roomId; // Your business ID
 
     private List<Message> messages = new ArrayList<>();
 
@@ -19,18 +19,18 @@ public class Room {
     }
 
     // All-args constructor
-    public Room(Long id, Long roomId, List<Message> messages) {
+    public Room(String id, Long roomId, List<Message> messages) {
         this.id = id;
         this.roomId = roomId;
         this.messages = messages;
     }
 
     // Getter and Setter for id
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -51,5 +51,4 @@ public class Room {
     public void setMessages(List<Message> messages) {
         this.messages = messages;
     }
-
 }
